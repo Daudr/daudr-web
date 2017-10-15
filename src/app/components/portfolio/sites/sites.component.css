@@ -1,0 +1,13 @@
+md-icon {
+  vertical-align: bottom;
+  color: #1976D2;
+}
+
+.descrizione {
+  white-space: pre-wrap;
+}
+
+.carousel {
+  max-height: 600px;
+  max-width: 600px;
+}

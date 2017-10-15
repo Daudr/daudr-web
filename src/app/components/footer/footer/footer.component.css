@@ -1,0 +1,13 @@
+md-toolbar {
+  margin-top: 10px;
+}
+
+.right {
+  text-align: right;
+  float: right;
+  margin-right: 10px;
+}
+
+.right::after {
+  clear: right;
+}

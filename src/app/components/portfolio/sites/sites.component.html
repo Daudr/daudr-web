@@ -1,0 +1,24 @@
+<md-card class="site-card">
+  <md-card-title>{{site.nome}} <a *ngIf="site.link" [href]="site.link" target="_blank"><md-icon>open_in_new</md-icon></a></md-card-title>
+  <md-card-subtitle>Per {{site.datore}}<br><span>Dal {{site.periodo.da}}</span><span *ngIf="site.periodo.a; else incorso"> al {{site.periodo.a}}</span></md-card-subtitle>
+  <md-card-content>
+    <p class="descrizione">{{site.descrizione}}</p>
+    <!-- <md-expansion-panel *ngIf="immagini?.length>0">
+      <md-expansion-panel-header>
+       <md-panel-title>
+         Galleria
+       </md-panel-title>
+       <md-panel-description>
+         Foto del sito
+       </md-panel-description>
+      </md-expansion-panel-header>
+      <div class="carousel">
+        <carousel [sources]="immagini" [config]="config"></carousel>
+      </div>
+    </md-expansion-panel> -->
+  </md-card-content>
+</md-card>
+
+<ng-template #incorso>
+  <span>in corso</span>
+</ng-template>

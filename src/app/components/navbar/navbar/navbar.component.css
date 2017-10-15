@@ -1,0 +1,18 @@
+.routes::after {
+  clear: both;
+}
+
+.routes {
+  width: 70%;
+  margin: auto;
+}
+
+#top {
+  height: 200px;
+}
+
+@media screen and (max-width:479px) {
+  .routes {
+    width: 90%;
+  }
+}

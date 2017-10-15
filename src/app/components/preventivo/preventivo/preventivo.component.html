@@ -1,0 +1,6 @@
+<div [class]="arrow_class" (click)="toggleArrow()">
+  <md-icon>{{arrow_direction}}</md-icon>
+</div>
+<div (click)="openDialog()" [class]="preventivo_class" *ngIf="arrow_direction === 'keyboard_arrow_right'">
+  <p>RICHIEDI UN PREVENTIVO GRATUITO</p>
+</div>

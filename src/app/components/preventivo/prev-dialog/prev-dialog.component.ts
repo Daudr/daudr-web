@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Http } from '@angular/http';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -19,7 +19,7 @@ export class PrevDialogComponent implements OnInit {
   sito: string;
   note: string;
 
-  constructor(private dialogRef: MdDialogRef<PrevDialogComponent>, private http: Http) { }
+  constructor(private dialogRef: MatDialogRef<PrevDialogComponent>, private http: Http) { }
 
   ngOnInit() { }
 

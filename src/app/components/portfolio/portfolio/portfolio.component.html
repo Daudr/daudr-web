@@ -1,9 +1,9 @@
 <div id="portfolio" class="div-portfolio">
-  <md-card>
-    <md-card-title>Progetti web a cui ho contribuito/creato</md-card-title>
-    <md-card-content>
-      <md-spinner *ngIf="sites?.length<=0"></md-spinner>
+  <mat-card>
+    <mat-card-title>Progetti web a cui ho contribuito/creato</mat-card-title>
+    <mat-card-content>
+      <mat-spinner *ngIf="sites?.length<=0"></mat-spinner>
       <app-sites *ngFor="let site of sites" [site]="site" [immagini]="immagini"></app-sites>
-    </md-card-content>
-  </md-card>
+    </mat-card-content>
+  </mat-card>
 </div>

@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
 
@@ -26,11 +27,12 @@ import { UpComponent } from './components/up/up.component';
     UpComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition( { appId: 'daudr-web' } ),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     NavbarModule,
     WhoiamModule,

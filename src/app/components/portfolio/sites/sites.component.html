@@ -1,23 +1,23 @@
-<md-card class="site-card">
-  <md-card-title>{{site.nome}} <a *ngIf="site.link" [href]="site.link" target="_blank"><md-icon>open_in_new</md-icon></a></md-card-title>
-  <md-card-subtitle>Per {{site.datore}}<br><span>Dal {{site.periodo.da}}</span><span *ngIf="site.periodo.a; else incorso"> al {{site.periodo.a}}</span></md-card-subtitle>
-  <md-card-content>
+<mat-card class="site-card">
+  <mat-card-title>{{site.nome}} <a *ngIf="site.link" [href]="site.link" target="_blank"><mat-icon>open_in_new</mat-icon></a></mat-card-title>
+  <mat-card-subtitle>Per {{site.datore}}<br><span>Dal {{site.periodo.da}}</span><span *ngIf="site.periodo.a; else incorso"> al {{site.periodo.a}}</span></mat-card-subtitle>
+  <mat-card-content>
     <p class="descrizione">{{site.descrizione}}</p>
-    <!-- <md-expansion-panel *ngIf="immagini?.length>0">
-      <md-expansion-panel-header>
-       <md-panel-title>
+    <!-- <mat-expansion-panel *ngIf="immagini?.length>0">
+      <mat-expansion-panel-header>
+       <mat-panel-title>
          Galleria
-       </md-panel-title>
-       <md-panel-description>
+       </mat-panel-title>
+       <mat-panel-description>
          Foto del sito
-       </md-panel-description>
-      </md-expansion-panel-header>
+       </mat-panel-description>
+      </mat-expansion-panel-header>
       <div class="carousel">
         <carousel [sources]="immagini" [config]="config"></carousel>
       </div>
-    </md-expansion-panel> -->
-  </md-card-content>
-</md-card>
+    </mat-expansion-panel> -->
+  </mat-card-content>
+</mat-card>
 
 <ng-template #incorso>
   <span>in corso</span>

@@ -1,11 +1,11 @@
-<md-card class="job-card">
-  <md-card-title>{{job.nome}}</md-card-title>
-  <md-card-subtitle>Per {{job.datore}}<br><span>Dal {{job.periodo.da}}</span><span *ngIf="job.periodo.a; else incorso"> al {{job.periodo.a}}</span></md-card-subtitle>
-  <md-card-content>
+<mat-card class="job-card">
+  <mat-card-title>{{job.nome}}</mat-card-title>
+  <mat-card-subtitle>Per {{job.datore}}<br><span>Dal {{job.periodo.da}}</span><span *ngIf="job.periodo.a; else incorso"> al {{job.periodo.a}}</span></mat-card-subtitle>
+  <mat-card-content>
 
     <p>{{job.descrizione}}</p>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>
 
 <ng-template #incorso>
   <span>in corso</span>

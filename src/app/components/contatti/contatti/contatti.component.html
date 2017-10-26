@@ -1,12 +1,12 @@
 <div id="contatti" class="div-contatti">
-  <md-card>
-    <md-card-title>Contatti</md-card-title>
-    <md-card-content>
-      <md-grid-list [cols]="cols" rowHeight="150px">
-        <md-grid-tile *ngFor="let contact of contacts">
+  <mat-card>
+    <mat-card-title>Contatti</mat-card-title>
+    <mat-card-content>
+      <mat-grid-list [cols]="cols" rowHeight="150px">
+        <mat-grid-tile *ngFor="let contact of contacts">
           <app-contacts [contact]="contact"></app-contacts>
-        </md-grid-tile>
-      </md-grid-list>
-    </md-card-content>
-  </md-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
 </div>

@@ -1,30 +1,30 @@
 <div>
   <h3>Richiedi un preventivo gratuito</h3>
   <form (submit)="onSubmitSend()">
-    <md-form-field class="less-width">
-      <input mdInput placeholder="Nome e Cognome" required [(ngModel)]="nominativo" name="nominativo">
-    </md-form-field>
-    <md-form-field class="less-width">
-      <input mdInput placeholder="E-Mail" required [(ngModel)]="email" name="email">
-    </md-form-field>
-    <md-form-field class="less-width">
-      <input mdInput placeholder="Telefono" required [(ngModel)]="telefono" name="telefono">
-    </md-form-field>
-    <md-form-field class="less-width">
-      <input mdInput placeholder="Città" required [(ngModel)]="citta" name="citta">
-    </md-form-field>
-    <md-form-field class="less-width">
-      <input mdInput placeholder="Azienda" [(ngModel)]="azienda" name="azienda">
-    </md-form-field>
-    <md-form-field class="less-width">
-      <input mdInput placeholder="Sito web esistente o da registrare" [(ngModel)]="sito" name="sito">
-    </md-form-field>
-    <md-form-field class="full-width">
-      <textarea mdInput mdTextareaAutosize placeholder="Eventuali note" [(ngModel)]="note" name="note"></textarea>
-    </md-form-field>
+    <mat-form-field class="less-width">
+      <input matInput placeholder="Nome e Cognome" required [(ngModel)]="nominativo" name="nominativo">
+    </mat-form-field>
+    <mat-form-field class="less-width">
+      <input matInput placeholder="E-Mail" required [(ngModel)]="email" name="email">
+    </mat-form-field>
+    <mat-form-field class="less-width">
+      <input matInput placeholder="Telefono" required [(ngModel)]="telefono" name="telefono">
+    </mat-form-field>
+    <mat-form-field class="less-width">
+      <input matInput placeholder="Città" required [(ngModel)]="citta" name="citta">
+    </mat-form-field>
+    <mat-form-field class="less-width">
+      <input matInput placeholder="Azienda" [(ngModel)]="azienda" name="azienda">
+    </mat-form-field>
+    <mat-form-field class="less-width">
+      <input matInput placeholder="Sito web esistente o da registrare" [(ngModel)]="sito" name="sito">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput matTextareaAutosize placeholder="Eventuali note" [(ngModel)]="note" name="note"></textarea>
+    </mat-form-field>
     <div class="center">
-      <button type="submit" md-raised-button>INVIA</button>
-      <button type="reset" md-raised-button>CANCELLA I CAMPI</button>
+      <button type="submit" mat-raised-button>INVIA</button>
+      <button type="reset" mat-raised-button>CANCELLA I CAMPI</button>
     </div>
   </form>
 </div>

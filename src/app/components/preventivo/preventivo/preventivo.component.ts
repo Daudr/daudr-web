@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 import { PrevDialogComponent } from '../prev-dialog/prev-dialog.component';
 
@@ -15,7 +15,7 @@ export class PreventivoComponent implements OnInit {
   arrow_class: string = 'arrow';
   preventivo_class: string = 'preventivo';
 
-  constructor(private dialog: MdDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() { }
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FirebaseService } from '../firebase/firebase.service';
-import { FirebaseListObservable } from 'angularfire2/database';
 
 import { Job } from '../../../interfaces/interfaces';
 

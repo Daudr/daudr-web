@@ -5,6 +5,7 @@ import { MatCardModule, MatGridListModule } from '@angular/material';
 
 import { ContattiComponent } from './contatti/contatti.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     MatCardModule,
     MatGridListModule
   ],
-  declarations: [ContattiComponent, ContactsComponent],
+  declarations: [ContattiComponent, ContactsComponent, MapComponent],
   exports: [ContattiComponent]
 })
 export class ContattiModule { }

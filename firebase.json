@@ -6,7 +6,7 @@
     "rewrites": [
       {
         "source": "**",
-        "function": "trigger"
+        "function": "ssrapp"
       }
     ],
     "public": "dist",

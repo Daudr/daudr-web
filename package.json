@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --prod",
-    "build:server": "ng build --prod -a 1 --oh none",
+    "build:server": "ng build --prod -a 1 -oh none",
     "tsc:functions": "node_modules\\.bin\\tsc -p server\\tsconfig.functions.json",
     "deploy": "npm run tsc:functions && npm run build:server && npm run build:prod && firebase deploy"
   },

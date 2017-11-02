@@ -46,3 +46,5 @@ Thumbs.db
 
 # Files with keys
 /src/environments/
+firebase-debug.log
+*.log

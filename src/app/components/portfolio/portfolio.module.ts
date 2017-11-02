@@ -6,7 +6,7 @@ import { MatCardModule, MatProgressSpinnerModule, MatIconModule, MatExpansionMod
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FirebaseService } from './firebase/firebase.service';
 
-import { CarouselModule } from 'angular4-carousel';
+// import { CarouselModule } from 'angular4-carousel';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SitesComponent } from './sites/sites.component';
@@ -19,7 +19,7 @@ import { SitesComponent } from './sites/sites.component';
     MatIconModule,
     MatExpansionModule,
     AngularFireDatabaseModule,
-    CarouselModule
+    // CarouselModule
   ],
   declarations: [PortfolioComponent, SitesComponent],
   exports: [PortfolioComponent, SitesComponent],

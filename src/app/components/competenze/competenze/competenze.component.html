@@ -2,11 +2,9 @@
   <mat-card>
     <mat-card-title>Competenze</mat-card-title>
     <mat-card-content>
-      <mat-grid-list cols="2" rowHeight="200px">
-        <mat-grid-tile *ngFor="let competenza of competenze">
-          <app-competenza [competenza]="competenza"></app-competenza>
-        </mat-grid-tile>
-      </mat-grid-list>
+      <mat-chip-list>
+        <mat-chip *ngFor="let competenza of competenze">{{ competenza.nome }}</mat-chip>
+      </mat-chip-list>
     </mat-card-content>
   </mat-card>
 </div>

@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatCardModule, MatGridListModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatCardModule, MatChipsModule } from '@angular/material';
 
 import { CompetenzeComponent } from './competenze/competenze.component';
-import { CompetenzaComponent } from './competenza/competenza.component';
 
 @NgModule({
   imports: [
     CommonModule,
     MatCardModule,
-    MatGridListModule,
-    MatProgressSpinnerModule
+    MatChipsModule
   ],
-  declarations: [CompetenzeComponent, CompetenzaComponent],
-  exports: [CompetenzeComponent, CompetenzaComponent]
+  declarations: [CompetenzeComponent],
+  exports: [CompetenzeComponent]
 })
 export class CompetenzeModule { }

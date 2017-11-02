@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';
@@ -19,7 +19,7 @@ export class PrevDialogComponent implements OnInit {
   sito: string;
   note: string;
 
-  constructor(private dialogRef: MatDialogRef<PrevDialogComponent>, private http: Http) { }
+  constructor(private dialogRef: MatDialogRef<PrevDialogComponent>, private http: HttpClient) { }
 
   ngOnInit() { }
 
@@ -51,16 +51,15 @@ export class PrevDialogComponent implements OnInit {
       this.dialogRef.close();
 
       return this.http.post("https://secret-crag-18429.herokuapp.com/api/sendemail", email)
-  			.toPromise()
-  			.then(response => {
-          let res = response.json();
-          if (res.data.success == true) {
+        .subscribe( response => {
+          let success = response['success'];
+
+          if (success) {
             alert('email inviata');
           } else {
             alert('Errore: Email non inviata');
           }
-        })
-  			.catch(this.handleError);
+        });
     } else {
       alert("Inserisci tutti i campi obbligatori");
     }

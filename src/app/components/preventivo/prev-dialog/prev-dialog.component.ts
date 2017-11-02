@@ -40,11 +40,11 @@ export class PrevDialogComponent implements OnInit {
         to: 'michele@daudr.me',
         from: this.email,
         sub: 'Preventivo sito - ' + this.nominativo,
-        content: 'Nominativo: ' + this.nominativo + '\n'
-                + 'Telefono: ' + this.telefono + '\n'
-                + 'Città: ' + this.citta + '\n'
-                + 'Azienda: ' + this.azienda + '\n'
-                + 'Sito: ' + this.sito + '\n'
+        content: 'Nominativo: ' + this.nominativo + '\n\n'
+                + 'Telefono: ' + this.telefono + '\n\n'
+                + 'Città: ' + this.citta + '\n\n'
+                + 'Azienda: ' + this.azienda + '\n\n'
+                + 'Sito: ' + this.sito + '\n\n'
                 + this.note
       }
 

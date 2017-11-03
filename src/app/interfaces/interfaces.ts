@@ -19,3 +19,7 @@ export interface Site {
   datore: string;
   immagini?: string[];
 }
+
+export interface Competenza {
+  nome: string;
+}

@@ -1,8 +1,8 @@
 import * as angularUniversal from 'angular-universal-express-firebase';
 
-let ssrapp = angularUniversal.trigger({
+export let ssrapp = angularUniversal.trigger({
   index: __dirname + '/index.html',
-  main: __dirname + '/main.bundle',
+  main: __dirname + '/dist-server/main.bundle',
   enableProdMode: true,
   cdnCacheExpiry: 2400,
   browserCacheExpiry: 1200

@@ -33,7 +33,8 @@ export class PreventivoComponent implements OnInit {
 
   openDialog () {
     this.dialog.open(PrevDialogComponent, {
-      data: {dialog: this.dialog}
+      data: {dialog: this.dialog},
+      maxHeight: '80vh'
     });
   }
 

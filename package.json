@@ -12,7 +12,8 @@
     "build:prod": "ng build --prod",
     "build:server": "ng build --prod -a 1 -oh none",
     "tsc:functions": "node_modules\\.bin\\tsc -p server\\tsconfig.functions.json",
-    "deploy": "npm run tsc:functions && npm run build:server && npm run build:prod && firebase deploy"
+    "copy:html": "cp src/index.html functions/dist-server",
+    "deploy": "npm run tsc:functions && npm run build:server && npm run build:prod && npm run copy:html && firebase deploy"
   },
   "private": true,
   "dependencies": {

@@ -14,9 +14,7 @@ a {
 }
 
 mat-toolbar-row.mat-toolbar-row {
-    display: inherit !important;
-    line-height: 5;
-    font-size: .7em;
+    font-size: 1em;
 }
 
 .center {

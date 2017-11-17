@@ -1,6 +1,6 @@
 {
   "name": "daudr-web",
-  "version": "0.0.0",
+  "version": "1.0.0rc",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./whoiam.component.css']
 })
 export class WhoiamComponent implements OnInit {
-  descrizione = `Michele, 20 anni, studente di Informatica all'Università di Bologna.\n\nSin da ragazzo ho sempre avuto un'interesse particolare per quanto riguarda i siti e il web generale. Questa passione mi ha poi portato a frequentare il corso di Informatica prima all'I.T.I.S. di Lancenigo e poi all'Università di Bologna.\n\nDalle conoscenze apprese durante gli studi sia scolastici che autodidattici sono capace di costruire un sito web di qualsiasi tipo da 0, per ogni esigenza, da un semplice sito portfolio ad un complesso e-commerce utilizzando solo ed esclusivamente le ultime tecnologie sul mercato.\n`;
+  descrizione =
+  `Michele, 20 anni, studente di Informatica all'Università di Bologna durante il giorno, consulente informatico la sera.\n
+  Sin da ragazzo ho sempre avuto un'interesse particolare per quanto riguarda i computer e il mondo dell'informatica in generale. Mi ricordo ancora le giornate passate a smanettare con il mio primo computer, dotato di Windows 95.\n
+  Ho sempre seguito mia passione: sia a scuola, scegliendo sempre indirizzi tecnico/informatici finendo a studiare anche all'Università, sia a casa, nel mio piccolo, integrando agli studi nozioni di tecnologie emergenti e mai viste in ambito scolastico.\n
+  Questo mi ha portato ad avere conoscenze nei più disparati campi dell'IT: dalla semplice programmazione alla sicurezza a livello enterprise.\n
+  I servizi che offro variano da cliente a cliente, ma quelli in cui sono più ferrato comprendono la progettazione, lo sviluppo e il mantenimento di siti web, servizi che possono essere fatti sia in autonomia che in gruppo.`;
 
   constructor() { }
 

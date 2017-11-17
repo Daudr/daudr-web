@@ -1,8 +1,29 @@
 "use strict";
+/*import 'zone.js/dist/zone-node';
+import * as functions from 'firebase-functions';
+import * as express from 'express';
+import { renderModuleFactory } from '@angular/platform-server'
+import * as fs from 'fs';
+
+const document = fs.readFileSync(__dirname + '/index.html', 'utf8');
+const AppServerModuleNgFactory = require(__dirname + '/dist-server/main.bundle').AppServerModuleNgFactory;
+
+const app = express();
+
+app.get('**', (req, res, next) => {
+  const url = req.path;
+  renderModuleFactory(AppServerModuleNgFactory, { document, url })
+    .then((html) => {
+      res.set('Cache-Control', 'public, max-age=1200, s-max-age=2400');
+      res.send(html);
+    });
+});
+
+export let ssrapp = functions.https.onRequest(app);*/
 Object.defineProperty(exports, "__esModule", { value: true });
 const angularUniversal = require("angular-universal-express-firebase");
 exports.ssrapp = angularUniversal.trigger({
-    index: __dirname + '/index.html',
+    index: __dirname + '/dist-server/index.html',
     main: __dirname + '/dist-server/main.bundle',
     enableProdMode: true,
     cdnCacheExpiry: 2400,

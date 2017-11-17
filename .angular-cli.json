@@ -36,7 +36,9 @@
       "outDir": "functions/dist-server",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "robots.txt",
+        "sitemap.xml"
       ],
       "index": "index.html",
       "main": "main.server.ts",

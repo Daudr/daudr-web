@@ -36,15 +36,15 @@ const functions = require('firebase-functions');
 const express = require('express');
 const fetch = require('node-fetch');
 const url = require('url');
+const cors = require('cors');
 const app = express();
 
+app.use(cors());
 
 // You might instead set these as environment varibles
 // I just want to make this example explicitly clear
 const appUrl = 'www.daudr.me';
-// const renderUrl = 'https://render-tron.appspot.com/render';
-const renderUrl = 'https://instafire-app.appspot.com/render';
-
+const renderUrl = 'https://render-tron.appspot.com/render';
 
 // Generates the URL
 function generateUrl(request) {
@@ -87,21 +87,15 @@ function detectBot(userAgent) {
       return true
     }
   }
-
   console.log('no bots found')
   return false
-
 }
 
 
 app.get('*', (req, res) => {
-
-
   const isBot = detectBot(req.headers['user-agent']);
 
-
   if (isBot) {
-
     const botUrl = generateUrl(req);
     // If Bot, fetch url via rendertron
 
@@ -115,12 +109,8 @@ app.get('*', (req, res) => {
         res.set('Vary', 'User-Agent');
 
         res.send(body.toString())
-
     });
-
   } else {
-
-
     // Not a bot, fetch the regular Angular app
     // Possibly faster to serve directly from from the functions directory?
     fetch(`https://${appUrl}`)

@@ -99,7 +99,7 @@ app.get('*', (req, res) => {
     const botUrl = generateUrl(req);
     // If Bot, fetch url via rendertron
 
-    fetch(`${renderUrl}/${botUrl}`)
+    fetch(`${renderUrl}/https://${botUrl}`)
       .then(res => res.text() )
       .then(body => {
 

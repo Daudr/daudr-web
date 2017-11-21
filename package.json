@@ -10,9 +10,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --prod",
-    "build:server": "ng build --prod -a 1 -oh none",
-    "tsc:functions": "node_modules\\.bin\\tsc -p server\\tsconfig.functions.json",
-    "copy:html": "cp src/index.html functions/dist-server",
     "deploy": "npm run build:prod && firebase deploy"
   },
   "private": true,
@@ -46,7 +43,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.2.16",
     "@types/node": "~8.0.53",
-    "angular-universal-express-firebase": "0.0.4",
     "codelyzer": "~4.0.1",
     "firebase-admin": "^5.5.0",
     "firebase-functions": "^0.7.3",
@@ -61,6 +57,6 @@
     "protractor": "~5.2.0",
     "ts-node": "~3.3.0",
     "tslint": "~5.8.0",
-    "typescript": "2.6.1"
+    "typescript": "^2.5.0"
   }
 }

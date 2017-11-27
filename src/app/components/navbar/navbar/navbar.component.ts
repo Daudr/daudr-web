@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
     {name: 'Competenze', link: '#competenze', class: 'left mat-raised-button'},
     {name: 'Contatti', link: '#contatti', class: 'right mat-raised-button'}
   ];
-  image: string = 'assets/propic/propic.jpg';
+  image: string = 'https://firebasestorage.googleapis.com/v0/b/daudr-web.appspot.com/o/assets%2Fpropic%2Fpropic.jpg?alt=media&token=cbfd67b2-b9fa-4a72-a0ed-61d222d4a7a2';
 
   constructor() { }
 

@@ -1,31 +1,76 @@
 "use strict";
-/*import 'zone.js/dist/zone-node';
-import * as functions from 'firebase-functions';
-import * as express from 'express';
-import { renderModuleFactory } from '@angular/platform-server'
-import * as fs from 'fs';
+const functions = require('firebase-functions');
+const app = require('express')();
+const fetch = require('node-fetch');
+const url = require('url');
+const cors = require('cors');
 
-const document = fs.readFileSync(__dirname + '/index.html', 'utf8');
-const AppServerModuleNgFactory = require(__dirname + '/dist-server/main.bundle').AppServerModuleNgFactory;
+app.use(cors());
 
-const app = express();
+const appUrl = 'www.daudr.me';
+const renderUrl = 'https://render-tron.appspot.com/render';
 
-app.get('**', (req, res, next) => {
-  const url = req.path;
-  renderModuleFactory(AppServerModuleNgFactory, { document, url })
-    .then((html) => {
-      res.set('Cache-Control', 'public, max-age=1200, s-max-age=2400');
-      res.send(html);
+function generateUrl(request) {
+  return url.format({
+    protocol: request.protocol,
+    host: appUrl,
+    pathname: request.originalUrl
+  });
+}
+
+function detectBot(userAgent) {
+  const bots = [
+    'googlebot',
+    'bingbot',
+    'yandexbot',
+    'duckduckbot',
+    'slurp',
+    'twitterbot',
+    'facebookexternalhit',
+    'linkedinbot',
+    'embedly',
+    'baiduspider',
+    'pinterest',
+    'slackbot',
+    'vkShare',
+    'facebot',
+    'outbrain',
+    'W3C_Validator'
+  ]
+
+  const agent = userAgent.toLowerCase()
+
+  for (const bot of bots) {
+    if (agent.indexOf(bot) > -1) {
+      console.log('bot detected', bot, agent)
+      return true
+    }
+  }
+  console.log('no bots found')
+  return false
+}
+
+app.get('*', (req, res) => {
+  const isBot = detectBot(req.headers['user-agent']);
+
+  if (isBot) {
+    const botUrl = generateUrl(req);
+
+    fetch(`${renderUrl}/https://${botUrl}`)
+      .then(res => res.text() )
+      .then(body => {
+        res.set('Cache-Control', 'public, max-age=1200, s-maxage=2400');
+        res.set('Vary', 'User-Agent');
+
+        res.send(body.toString())
     });
+  } else {
+    fetch(`https://${appUrl}`)
+      .then(res => res.text())
+      .then(body => {
+        res.send(body.toString());
+      })
+  }
 });
 
-export let ssrapp = functions.https.onRequest(app);*/
-Object.defineProperty(exports, "__esModule", { value: true });
-const angularUniversal = require("angular-universal-express-firebase");
-exports.ssrapp = angularUniversal.trigger({
-    index: __dirname + '/dist-server/index.html',
-    main: __dirname + '/dist-server/main.bundle',
-    enableProdMode: true,
-    cdnCacheExpiry: 2400,
-    browserCacheExpiry: 1200
-});
+exports.app = functions.https.onRequest(app);

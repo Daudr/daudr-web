@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material';
 
-import 'rxjs/add/operator/toPromise';
+
 
 @Component({
   selector: 'app-prev-dialog',

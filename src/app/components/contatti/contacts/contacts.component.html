@@ -1,7 +1,7 @@
 <a [href]="contact.link" target="_blank">
   <mat-card class="contact-card">
     <mat-card-content>
-      <img *ngIf="contact.icon" [src]="contact.icon" [alt]="contact.alt" class="icon">
+      <img *ngIf="contact.icon" data-src={{contact.icon}} [alt]="contact.alt" class="icon lazyload">
       <p *ngIf="contact.altro" class="altro">({{contact.altro}})</p>
     </mat-card-content>
   </mat-card>

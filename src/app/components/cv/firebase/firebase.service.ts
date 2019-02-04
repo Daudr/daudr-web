@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Job } from '../../../interfaces/interfaces';
 import { Observable } from 'rxjs';
 
+import { map } from 'rxjs/operators';
+
 @Injectable()
 export class FirebaseService {
-  jobsRef: AngularFireList<Job[]>;
+  jobsRef: AngularFireList<any>;
   jobs: Observable<any>;
 
   constructor(private db: AngularFireDatabase) {
-    this.jobsRef = this.db.list('/jobs') as AngularFireList<Job[]>;
+    this.jobsRef = this.db.list('/jobs') as AngularFireList<Job>;
 
-    this.jobs = this.jobsRef.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-    });
+    this.jobs = this.jobsRef.valueChanges().pipe(map(changes => changes));
   }
 
-  getJobs () {
+  getJobs() {
     return this.jobs;
   }
 

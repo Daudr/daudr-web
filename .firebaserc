@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "daudr-web"
+  },
+  "targets": {
+    "daudr-web": {
+      "hosting": {
+        "test": [
+          "test-daudr"
+        ]
+      }
+    }
   }
 }

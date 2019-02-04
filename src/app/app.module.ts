@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from '@angular/fire';
 
 import { NavbarModule } from './components/navbar/navbar.module';
 import { WhoiamModule } from './components/whoiam/whoiam.module';

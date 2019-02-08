@@ -7,6 +7,8 @@ const cors = require('cors');
 
 app.use(cors());
 
+app.set('Cache-Control', 'public, max-age=31557600');
+
 const appUrl = 'www.daudr.me';
 const renderUrl = 'https://render-tron.appspot.com/render';
 

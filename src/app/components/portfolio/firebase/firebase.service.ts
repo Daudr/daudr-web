@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Site } from '../../../interfaces/interfaces';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class FirebaseService {
-  sitesRef: AngularFireList<Site[]>;
+  sitesRef: AngularFireList<any>;
   sites: Observable<any>;
 
   constructor(private db: AngularFireDatabase) {
-    this.sitesRef = this.db.list('/sites') as AngularFireList<Site[]>;
+    this.sitesRef = this.db.list('sites') as AngularFireList<Site>;
 
-    this.sites = this.sitesRef.snapshotChanges().map(changes => {
-      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-    });
+    this.sites = this.sitesRef.valueChanges().pipe(map(changes => changes));
   }
 
-  getSites () {
+  getSites() {
     return this.sites;
   }
 

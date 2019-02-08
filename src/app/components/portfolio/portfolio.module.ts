@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MatCardModule, MatProgressSpinnerModule, MatIconModule, MatExpansionModule } from '@angular/material';
 
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { FirebaseService } from './firebase/firebase.service';
 
 // import { CarouselModule } from 'angular4-carousel';

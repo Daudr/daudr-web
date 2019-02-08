@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from '@angular/fire';
 
 import { NavbarModule } from './components/navbar/navbar.module';
 import { WhoiamModule } from './components/whoiam/whoiam.module';
@@ -19,6 +19,7 @@ import { PreventivoModule } from './components/preventivo/preventivo.module';
 
 import { AppComponent } from './app.component';
 import { UpComponent } from './components/up/up.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UpComponent } from './components/up/up.component';
     CvModule,
     ContattiModule,
     FooterModule,
-    PreventivoModule
+    PreventivoModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

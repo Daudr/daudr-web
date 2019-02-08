@@ -14,18 +14,21 @@ export class PortfolioComponent implements OnInit {
   constructor(private fire: FirebaseService) {
     this.fire.getSites().subscribe(sites => {
       this.sites = sites.sort((a, b) => {
-        if (new Date("01/" + a.periodo.da) > new Date("01/" + b.periodo.a)) {
+        if (new Date('01/' + a.periodo.da) > new Date('01/' + b.periodo.a)) {
           return -1;
-        } else if (new Date("01/" + a.periodo.da) < new Date("01/" + b.periodo.a)) {
+        } else if (
+          new Date('01/' + a.periodo.da) < new Date('01/' + b.periodo.a)
+        ) {
           return 1;
         } else {
           return 0;
         }
       });
-      this.immagini = Object.keys(sites[0].immagini).map(key=>sites[0].immagini[key]).map(x => x.substr(0, x.length - 4));
+      this.immagini = Object.keys(sites[0].immagini)
+        .map(key => sites[0].immagini[key])
+        .map(x => x.substr(0, x.length - 4));
     });
   }
 
   ngOnInit() {}
-
 }

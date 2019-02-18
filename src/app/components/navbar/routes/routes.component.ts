@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RoutesComponent implements OnInit {
   @Input() route;
-  
+
   constructor() { }
 
   ngOnInit() {

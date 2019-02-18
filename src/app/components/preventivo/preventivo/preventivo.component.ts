@@ -11,9 +11,9 @@ declare var $: any;
   styleUrls: ['./preventivo.component.css']
 })
 export class PreventivoComponent implements OnInit {
-  arrow_direction: string = 'keyboard_arrow_right';
-  arrow_class: string = 'arrow';
-  preventivo_class: string = 'preventivo';
+  arrow_direction = 'keyboard_arrow_right';
+  arrow_class = 'arrow';
+  preventivo_class = 'preventivo';
 
   constructor(private dialog: MatDialog) { }
 
@@ -23,11 +23,11 @@ export class PreventivoComponent implements OnInit {
     if (this.arrow_direction === 'keyboard_arrow_right') {
       this.arrow_direction = 'keyboard_arrow_left';
       this.arrow_class = 'arrow arrow-closed';
-      this.preventivo_class = "preventivo-closed";
+      this.preventivo_class = 'preventivo-closed';
     } else {
       this.arrow_direction = 'keyboard_arrow_right';
       this.arrow_class = 'arrow';
-      this.preventivo_class = "preventivo";
+      this.preventivo_class = 'preventivo';
     }
   }
 

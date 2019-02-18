@@ -46,13 +46,13 @@ export class PrevDialogComponent implements OnInit {
                 + 'Azienda: ' + this.azienda + '\n\n'
                 + 'Sito: ' + this.sito + '\n\n'
                 + this.note
-      }
+      };
 
       this.dialogRef.close();
 
-      return this.http.post("https://secret-crag-18429.herokuapp.com/api/sendemail", email)
+      return this.http.post('https://secret-crag-18429.herokuapp.com/api/sendemail', email)
         .subscribe( response => {
-          let success = response['success'];
+          const success = response['success'];
 
           if (success) {
             alert('email inviata');
@@ -61,12 +61,12 @@ export class PrevDialogComponent implements OnInit {
           }
         });
     } else {
-      alert("Inserisci tutti i campi obbligatori");
+      alert('Inserisci tutti i campi obbligatori');
     }
   }
 
   private handleError(error: any) {
-      let errMsg = (error.message) ? error.message :
+      const errMsg = (error.message) ? error.message :
           error.status ? `${error.status} - ${error.statusText}` : 'Server error';
       console.error(errMsg); // log to console instead
   }

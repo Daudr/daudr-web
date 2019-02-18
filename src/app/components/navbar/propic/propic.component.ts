@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PropicComponent implements OnInit {
   @Input() image;
-  
+
   constructor() { }
 
   ngOnInit() {

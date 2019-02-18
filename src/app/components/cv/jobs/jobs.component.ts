@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class JobsComponent implements OnInit {
   @Input() job;
-  
+
   constructor() { }
 
   ngOnInit() {

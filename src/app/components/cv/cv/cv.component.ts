@@ -15,9 +15,9 @@ export class CvComponent implements OnInit {
   constructor(private fire: FirebaseService) {
     this.fire.getJobs().subscribe(jobs => {
       this.jobs = jobs.sort((a, b) => {
-        if (new Date("01/" + a.periodo.da) > new Date("01/" + b.periodo.a)) {
+        if (new Date('01/' + a.periodo.da) > new Date('01/' + b.periodo.a)) {
           return -1;
-        } else if (new Date("01/" + a.periodo.da) < new Date("01/" + b.periodo.a)) {
+        } else if (new Date('01/' + a.periodo.da) < new Date('01/' + b.periodo.a)) {
           return 1;
         } else {
           return 0;

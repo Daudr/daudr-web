@@ -1,3 +1,11 @@
 .descrizione {
   white-space: pre-wrap;
 }
+
+#whoiam {
+  width: 50%;
+}
+
+p {
+  font-size: 16px;
+}

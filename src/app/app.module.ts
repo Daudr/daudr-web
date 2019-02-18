@@ -20,6 +20,7 @@ import { PreventivoModule } from './components/preventivo/preventivo.module';
 import { AppComponent } from './app.component';
 import { UpComponent } from './components/up/up.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    FlexLayoutModule,
     NavbarModule,
     WhoiamModule,
     PortfolioModule,

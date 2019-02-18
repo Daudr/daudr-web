@@ -28,11 +28,18 @@
 
   <link rel="canonical" href="https://www.daudr.me">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
   <style media="screen">.cd-top {background: rgba(0, 0, 0, 0.75) url(assets/cd-top/cd-top-arrow.svg) no-repeat center 50%;}</style>
 
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+  <link defer href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto" rel="stylesheet">
+  <link defer rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
+</head>
+<body>
+  <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+
+  <script defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
   <script>
     window.addEventListener("load", function(){
     window.cookieconsent.initialise({
@@ -53,7 +60,7 @@
       }
     })});
   </script>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-45433517-5"></script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-45433517-5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -61,11 +68,7 @@
 
     gtag('config', 'UA-45433517-5');
   </script>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1976d2">
-</head>
-<body>
-  <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+
+  <script defer src="assets/scripts/lazyload.js"></script>
 </body>
 </html>

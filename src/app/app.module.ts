@@ -21,11 +21,16 @@ import { AppComponent } from './app.component';
 import { UpComponent } from './components/up/up.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SectionComponent } from './components/section/section.component';
+import { SectionListComponent } from './components/section-list/section-list.component';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UpComponent
+    UpComponent,
+    SectionComponent,
+    SectionListComponent
   ],
   imports: [
     BrowserModule.withServerTransition( { appId: 'daudr-web' } ),
@@ -43,6 +48,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ContattiModule,
     FooterModule,
     PreventivoModule,
+    MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

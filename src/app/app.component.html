@@ -3,13 +3,14 @@
 </nav>
 
 <main fxLayout="column">
-  <app-whoiam></app-whoiam>
+  <daudr-section *ngFor="let section of sections; odd as odd; index as i" [lineStyle]="section.lineStyle" [title]="section.title" [description]="section.description" [right]="odd" [first]="i === 0" [last]="i === sections.length - 1"></daudr-section>
+  <!-- app-whoiam></app-whoiam>
   <app-portfolio></app-portfolio>
   <app-competenze></app-competenze>
   <app-cv></app-cv>
   <app-contatti></app-contatti>
   <app-up></app-up>
-  <app-preventivo></app-preventivo>
+  <app-preventivo></app-preventivo> -->
 </main>
 
 <footer>

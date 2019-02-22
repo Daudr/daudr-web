@@ -21,6 +21,10 @@ html {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
+.center-align {
+  text-align: center;
+}
+
 #stars {
   width: 1px;
   height: 1px;
@@ -88,10 +92,6 @@ html {
   font-family: 'Roboto';
 }
 
-body {
-  background-repeat: repeat;
-}
-
 a {
   text-decoration: none;
 }
@@ -130,4 +130,69 @@ mat-toolbar-row.mat-toolbar-row {
   .site-card {
     width: auto;
   }
+}
+
+.mat-card-title {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.top-line,
+.bottom-line {
+  height: 50px;
+}
+
+.top-line > div,
+.bottom-line > div {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+}
+
+.border-bottom {
+  border-bottom: white solid 2px;
+}
+
+.border-top {
+  border-top: white solid 2px;
+}
+
+.border-right {
+  border-right: white solid 2px;
+}
+
+.border-left {
+  border-left: white solid 2px;
+}
+
+#title {
+  color: #fff;
+  text-align: center;
+  font-family: 'lato', sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  padding-left: 10px;
+
+  span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.daudr-section {
+  width: 60%;
+}
+
+.section-right {
+  float: right;
+}
+
+.section-right + div.bottom-line {
+  clear: both;
 }

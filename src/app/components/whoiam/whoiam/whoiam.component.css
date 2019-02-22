@@ -9,3 +9,19 @@
 p {
   font-size: 16px;
 }
+
+.line {
+  height: 50px;
+}
+
+.line > div {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+}
+
+.second {
+  border-left: white solid 2px;
+  border-bottom: white solid 2px;
+  box-shadow: -9px 6px 20px -5px #fff;
+}

@@ -1,3 +1,24 @@
 md-spinner {
   margin: auto;
 }
+
+#portfolio {
+  width: 50%;
+  float: right;
+}
+
+.line {
+  height: 50px;
+}
+
+.line > div {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+}
+
+.first {
+  border-right: white solid 2px;
+  border-top: white solid 2px;
+  box-shadow: -9px 6px 20px -5px #fff;
+}

@@ -23,6 +23,7 @@
     "@angular/compiler": "7.2.5",
     "@angular/core": "7.2.5",
     "@angular/fire": "^5.1.1",
+    "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "7.2.5",
     "@angular/http": "7.2.5",
     "@angular/material": "^7.3.2",
@@ -38,9 +39,9 @@
     "jquery": "^3.3.1",
     "raf": "^3.4.0",
     "rxjs": "^6.4.0",
+    "terser": "3.14.1",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.29",
-    "terser": "3.14.1"
+    "zone.js": "~0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.2",

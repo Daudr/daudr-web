@@ -25,6 +25,7 @@ import { SectionComponent } from './components/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
 import { MatCardModule } from '@angular/material';
 import { FirebaseService } from './services/firebase.service';
+import { WINDOW_PROVIDERS } from './services/window.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { FirebaseService } from './services/firebase.service';
     MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService, WINDOW_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

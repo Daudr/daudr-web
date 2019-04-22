@@ -3,8 +3,6 @@ import { MatDialog } from '@angular/material';
 
 import { PrevDialogComponent } from '../prev-dialog/prev-dialog.component';
 
-declare var $: any;
-
 @Component({
   selector: 'app-preventivo',
   templateUrl: './preventivo.component.html',

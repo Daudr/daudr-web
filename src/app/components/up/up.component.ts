@@ -1,44 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-
-declare var $: any;
+import { Component, HostListener, ViewChild, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
+import { WINDOW } from '../../services/window.service';
 
 @Component({
   selector: 'app-up',
   templateUrl: './up.component.html',
   styleUrls: ['./up.component.css'],
 })
-export class UpComponent implements OnInit {
-  constructor() {}
+export class UpComponent {
+  isVisible = false;
+  fadeOut = false;
 
-  ngOnInit() {
-    // browser window scroll (in pixels) after which the "back to top" link is shown
-    const offset = 300,
-      // browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-      offset_opacity = 1200,
-      // duration of the top scrolling animation (in ms)
-      scroll_top_duration = 700,
-      // grab the "back to top" link
-      $back_to_top = $('.cd-top');
+  @ViewChild('backToTop') backToTop: HTMLElement;
 
-    // hide or show the "back to top" link
-    $(window).scroll(function() {
-      $(this).scrollTop() > offset
-        ? $back_to_top.addClass('cd-is-visible')
-        : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-      if ($(this).scrollTop() > offset_opacity) {
-        $back_to_top.addClass('cd-fade-out');
-      }
-    });
+  constructor(@Inject(DOCUMENT) private document: Document, @Inject(WINDOW) private window: Window) { }
 
-    // smooth scroll to top
-    $back_to_top.on('click', function(event) {
-      event.preventDefault();
-      $('body,html').animate(
-        {
-          scrollTop: 0,
-        },
-        scroll_top_duration
-      );
-    });
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const offset = 300;
+    const offsetOpacity = 1200;
+
+    const position = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+
+    if (position > offset) {
+      this.isVisible = true;
+    } else {
+      this.isVisible = false;
+      this.fadeOut = false;
+    }
+
+    if (position > offsetOpacity) {
+      this.fadeOut = true;
+    }
+  }
+
+  scrollTop() {
+    this.window.scroll({ top: 0, behavior: 'smooth' });
   }
 }

@@ -5,7 +5,6 @@ import { MatCardModule } from '@angular/material';
 
 import { CvComponent } from './cv/cv.component';
 import { JobsComponent } from './jobs/jobs.component';
-import { FirebaseService } from './firebase/firebase.service';
 
 @NgModule({
   imports: [
@@ -13,7 +12,6 @@ import { FirebaseService } from './firebase/firebase.service';
     MatCardModule
   ],
   declarations: [CvComponent, JobsComponent],
-  exports: [CvComponent, JobsComponent],
-  providers: [FirebaseService]
+  exports: [CvComponent, JobsComponent]
 })
 export class CvModule { }

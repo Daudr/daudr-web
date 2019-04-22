@@ -24,6 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SectionComponent } from './components/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
 import { MatCardModule } from '@angular/material';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { MatCardModule } from '@angular/material';
     MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

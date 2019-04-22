@@ -4,9 +4,6 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule, MatProgressSpinnerModule, MatIconModule, MatExpansionModule } from '@angular/material';
 
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { FirebaseService } from './firebase/firebase.service';
-
-// import { CarouselModule } from 'angular4-carousel';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SitesComponent } from './sites/sites.component';
@@ -18,11 +15,9 @@ import { SitesComponent } from './sites/sites.component';
     MatProgressSpinnerModule,
     MatIconModule,
     MatExpansionModule,
-    AngularFireDatabaseModule,
-    // CarouselModule
+    AngularFireDatabaseModule
   ],
   declarations: [PortfolioComponent, SitesComponent],
-  exports: [PortfolioComponent, SitesComponent],
-  providers: [FirebaseService]
+  exports: [PortfolioComponent, SitesComponent]
 })
 export class PortfolioModule { }

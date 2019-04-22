@@ -1,32 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { FirebaseService } from '../firebase/firebase.service';
+import { FirebaseService } from '../../../services/firebase.service';
 
 import { Job } from '../../../interfaces/interfaces';
+import { Subscription } from 'rxjs';
+import { dateSort } from '../../../utils';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.css']
 })
-export class CvComponent implements OnInit {
+export class CvComponent implements OnInit, OnDestroy {
   jobs: Job[];
+  jobsSubscription: Subscription;
 
-  constructor(private fire: FirebaseService) {
-    this.fire.getJobs().subscribe(jobs => {
-      this.jobs = jobs.sort((a, b) => {
-        if (new Date('01/' + a.periodo.da) > new Date('01/' + b.periodo.a)) {
-          return -1;
-        } else if (new Date('01/' + a.periodo.da) < new Date('01/' + b.periodo.a)) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
+  constructor(private fire: FirebaseService) {}
+
+  ngOnInit() {
+    this.jobsSubscription = this.fire.getJobs().subscribe(jobs => {
+      this.jobs = jobs.sort(dateSort);
     });
   }
 
-  ngOnInit() {
+  ngOnDestroy(): void {
+    this.jobsSubscription.unsubscribe();
   }
-
 }

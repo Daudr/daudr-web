@@ -1,19 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Section } from '../../interfaces';
 
 @Component({
   selector: 'daudr-section',
   templateUrl: './section.component.html',
-  styleUrls: ['./section.component.css']
+  styleUrls: ['./section.component.scss']
 })
 export class SectionComponent implements OnInit {
-  @Input() title: string;
-  @Input() description: string;
+  @Input() section: Section;
+
   @Input() right: boolean;
 
   @Input() first: boolean;
   @Input() last: boolean;
-
-  @Input() lineStyle: 'left-right' | 'right-left';
 
   constructor() { }
 

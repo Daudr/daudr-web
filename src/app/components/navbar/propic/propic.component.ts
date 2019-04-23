@@ -3,14 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-propic',
   templateUrl: './propic.component.html',
-  styleUrls: ['./propic.component.css']
+  styleUrls: ['./propic.component.scss']
 })
-export class PropicComponent implements OnInit {
-  @Input() image;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class PropicComponent {
+  @Input() image: string;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SECTIONS } from './utils';
+import { SECTIONS, dateSort } from './utils';
 import { FirebaseService } from './services/firebase.service';
 import { Subscription } from 'rxjs';
 
@@ -19,12 +19,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sectionsSubscription = this.firebase.getJobs().subscribe(jobs => {
-      console.log('Jobs ' + JSON.stringify(jobs));
-      this.sections[1].list = jobs;
+      this.sections[1].list = jobs.sort(dateSort);
     });
 
     this.sitesSubscription = this.firebase.getSites().subscribe(sites => {
-      this.sections[2].list = sites;
+      this.sections[2].list = sites.sort(dateSort);
     });
   }
 

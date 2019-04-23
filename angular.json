@@ -47,8 +47,7 @@
                 }
               ],
               "serviceWorker": true,
-              "ngswConfigPath": "src/ngsw-config.json",
-              "deployUrl": "https://www.daudr.me"
+              "ngswConfigPath": "src/ngsw-config.json"
             }
           }
         },

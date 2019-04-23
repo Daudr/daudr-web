@@ -5,7 +5,7 @@ import { WINDOW } from '../../services/window.service';
 @Component({
   selector: 'app-up',
   templateUrl: './up.component.html',
-  styleUrls: ['./up.component.css'],
+  styleUrls: ['./up.component.scss'],
 })
 export class UpComponent {
   isVisible = false;

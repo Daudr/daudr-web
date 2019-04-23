@@ -9,10 +9,6 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 
 import { NavbarModule } from './components/navbar/navbar.module';
-import { WhoiamModule } from './components/whoiam/whoiam.module';
-import { PortfolioModule } from './components/portfolio/portfolio.module';
-import { CompetenzeModule } from './components/competenze/competenze.module';
-import { CvModule} from './components/cv/cv.module';
 import { ContattiModule } from './components/contatti/contatti.module';
 import { FooterModule } from './components/footer/footer.module';
 import { PreventivoModule } from './components/preventivo/preventivo.module';
@@ -43,10 +39,6 @@ import { WINDOW_PROVIDERS } from './services/window.service';
     AngularFireModule.initializeApp(environment.firebase),
     FlexLayoutModule,
     NavbarModule,
-    WhoiamModule,
-    PortfolioModule,
-    CompetenzeModule,
-    CvModule,
     ContattiModule,
     FooterModule,
     PreventivoModule,

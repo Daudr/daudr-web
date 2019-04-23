@@ -1,11 +1,28 @@
 <nav>
-	<app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 </nav>
 
 <main fxLayout="column">
-  <daudr-section *ngFor="let section of sections; odd as odd; index as i"
-                 [section]="section" [right]="odd" [first]="i === 0"
-                 [last]="i === sections.length - 1"></daudr-section>
+  <ng-container *ngFor="let section of sections; odd as odd; index as i">
+    <ng-container [ngSwitch]="section.type">
+      <daudr-section
+        *ngSwitchCase="'simple'"
+        [section]="section"
+        [right]="odd"
+        [first]="i === 0"
+        [last]="i === sections.length - 1"
+      ></daudr-section>
+      <daudr-section-list
+          *ngSwitchCase="'list'"
+          [title]="section.title"
+          [list]="section.list"
+          [lineStyle]="section.lineStyle"
+          [right]="odd"
+          [first]="i === 0"
+          [last]="i === sections.length - 1">
+      </daudr-section-list>
+    </ng-container>
+  </ng-container>
   <!-- app-whoiam></app-whoiam>
   <app-portfolio></app-portfolio>
   <app-competenze></app-competenze>
@@ -16,5 +33,5 @@
 </main>
 
 <footer>
-	<app-footer></app-footer>
+  <app-footer></app-footer>
 </footer>

@@ -1,54 +1,35 @@
-import { Component } from '@angular/core';
-import { Section } from './interfaces';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { SECTIONS } from './utils';
+import { FirebaseService } from './services/firebase.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  sections: Section[] = [
-    {
-      title: 'Chi sono',
-      description:
-`Michele, 22 anni, studente di Informatica all'Università di Bologna durante il giorno, consulente informatico la sera.\n
-Sin da ragazzo ho sempre avuto un'interesse particolare per quanto riguarda i computer e il mondo dell'informatica in generale. Mi ricordo ancora le giornate passate a smanettare con il mio primo computer, dotato di Windows 95.\n
-Ho sempre seguito questa mia passione: sia a scuola, scegliendo sempre indirizzi tecnico/informatici finendo a studiare anche all'Università, sia a casa, nel mio piccolo, integrando agli studi nozioni di tecnologie emergenti e mai viste in ambito scolastico.\n
-Questo mi ha portato ad avere conoscenze nei più disparati campi dell'IT: dalla semplice programmazione alla sicurezza a livello enterprise.\n
-I servizi che offro variano da cliente a cliente, ma quelli in cui sono più ferrato comprendono la progettazione, lo sviluppo e il mantenimento di siti web, servizi che possono essere fatti sia in autonomia che in gruppo.`,
-      lineStyle: 'right-left'
-    },
-    {
-      title: 'Chi sono 2',
-      description: 'Ciao sono Michele 2',
-      lineStyle: 'left-right'
-    },
-    {
-      title: 'Chi sono',
-      description: 'Ciao sono Michele',
-      lineStyle: 'right-left'
-    },
-    {
-      title: 'Chi sono 2',
-      description: 'Ciao sono Michele 2',
-      lineStyle: 'left-right'
-    },
-    {
-      title: 'Chi sono',
-      description: 'Ciao sono Michele',
-      lineStyle: 'right-left'
-    },
-    {
-      title: 'Chi sono 2',
-      description: 'Ciao sono Michele 2',
-      lineStyle: 'left-right'
-    },
-    {
-      title: 'Chi sono',
-      description: 'Ciao sono Michele',
-      lineStyle: 'right-left'
-    },
-  ];
+export class AppComponent implements OnInit, OnDestroy {
+  sections = SECTIONS;
 
-  constructor() { }
+  sectionsSubscription: Subscription;
+
+  sitesSubscription: Subscription;
+
+  constructor(private firebase: FirebaseService) { }
+
+  ngOnInit() {
+    this.sectionsSubscription = this.firebase.getJobs().subscribe(jobs => {
+      console.log('Jobs ' + JSON.stringify(jobs));
+      this.sections[1].list = jobs;
+    });
+
+    this.sitesSubscription = this.firebase.getSites().subscribe(sites => {
+      this.sections[2].list = sites;
+    });
+  }
+
+  ngOnDestroy() {
+    this.sectionsSubscription.unsubscribe();
+    this.sitesSubscription.unsubscribe();
+  }
 }

@@ -1,8 +1,5 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-// @import 'compass';
-
-// n is number of stars required
 @function multiple-box-shadow($n) {
   $value: '#{random(2000)}px #{random(2000)}px #FFF';
 
@@ -105,7 +102,7 @@ mat-toolbar-row.mat-toolbar-row {
 }
 
 main {
-  margin: 0 20% 20px 20%;
+  margin: 0 15% 20px 15%;
 }
 
 .div-cv,
@@ -190,7 +187,7 @@ main {
 }
 
 .daudr-section {
-  width: 60%;
+  width: 50%;
 }
 
 .section-right {

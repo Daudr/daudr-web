@@ -22,6 +22,20 @@
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
+    }, {
+      "name": "api-requests",
+      "urls": [
+        "https://fonts.gstatic.com/**",
+        "https://www.google-analytics.com/**",
+        "https://cdnjs.cloudflare.com/**",
+        "/assets/**",
+        "/api/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "3d"
+      }
     }
   ]
 }

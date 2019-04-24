@@ -1,25 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material';
+import { NgModule } from '@angular/core';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { environment } from '../environments/environment';
 
-import { AngularFireModule } from '@angular/fire';
+import { AppComponent } from './app.component';
 
 import { NavbarModule } from './components/navbar/navbar.module';
 import { ContattiModule } from './components/contatti/contatti.module';
 import { FooterModule } from './components/footer/footer.module';
 import { PreventivoModule } from './components/preventivo/preventivo.module';
 
-import { AppComponent } from './app.component';
 import { UpComponent } from './components/up/up.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { SectionComponent } from './components/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
-import { MatCardModule } from '@angular/material';
+
 import { FirebaseService } from './services/firebase.service';
 import { WINDOW_PROVIDERS } from './services/window.service';
 
@@ -37,6 +40,7 @@ import { WINDOW_PROVIDERS } from './services/window.service';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     FlexLayoutModule,
     NavbarModule,
     ContattiModule,

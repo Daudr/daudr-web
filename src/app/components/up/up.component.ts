@@ -1,6 +1,6 @@
 import { Component, HostListener, ViewChild, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from '../../services/window.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-up',
@@ -11,7 +11,7 @@ export class UpComponent {
   isVisible = false;
   fadeOut = false;
 
-  @ViewChild('backToTop') backToTop: HTMLElement;
+  @ViewChild('backToTop', { static: false }) backToTop: HTMLElement;
 
   constructor(@Inject(DOCUMENT) private document: Document, @Inject(WINDOW) private window: Window) { }
 

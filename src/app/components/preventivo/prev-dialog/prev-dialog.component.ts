@@ -1,15 +1,14 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material';
-
-
 
 @Component({
   selector: 'app-prev-dialog',
   templateUrl: './prev-dialog.component.html',
-  styleUrls: ['./prev-dialog.component.css']
+  styleUrls: ['./prev-dialog.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PrevDialogComponent implements OnInit {
+export class PrevDialogComponent  {
 
   nominativo: string;
   email: string;
@@ -20,8 +19,6 @@ export class PrevDialogComponent implements OnInit {
   note: string;
 
   constructor(private dialogRef: MatDialogRef<PrevDialogComponent>, private http: HttpClient) { }
-
-  ngOnInit() { }
 
   onSubmitSend () {
 
@@ -50,7 +47,7 @@ export class PrevDialogComponent implements OnInit {
 
       this.dialogRef.close();
 
-      return this.http.post('https://secret-crag-18429.herokuapp.com/api/sendemail', email)
+      this.http.post('https://secret-crag-18429.herokuapp.com/api/sendemail', email)
         .subscribe( response => {
           const success = response['success'];
 
@@ -59,7 +56,8 @@ export class PrevDialogComponent implements OnInit {
           } else {
             alert('Errore: Email non inviata');
           }
-        });
+        },
+        err => this.handleError(err));
     } else {
       alert('Inserisci tutti i campi obbligatori');
     }

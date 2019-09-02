@@ -10,7 +10,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
-import { environment } from '../environments/environment';
+const { environment } = require('../environments/.env.dev');
 
 import { AppComponent } from './app.component';
 

@@ -9,7 +9,7 @@
   <mat-card>
     <mat-card-title>{{ section.title }}</mat-card-title>
     <mat-card-content>
-      <p class="descrizione">{{ section.description }}</p>
+      <p class="descrizione" [innerHTML]="section.description"></p>
     </mat-card-content>
   </mat-card>
 </section>

@@ -30,13 +30,16 @@
         [first]="i === 0"
         [last]="i === sections.length - 1">
       </daudr-section-contacts>
+      <daudr-section-map
+        *ngSwitchCase="'map'"
+        [title]="section.title"
+        [lineStyle]="section.lineStyle"
+        [right]="odd"
+        [first]="i === 0"
+        [last]="i === sections.length - 1"
+      ></daudr-section-map>
     </ng-container>
   </ng-container>
-  <!-- app-whoiam></app-whoiam>
-  <app-portfolio></app-portfolio>
-  <app-competenze></app-competenze>
-  <app-cv></app-cv>
-  <app-contatti></app-contatti> -->
   <app-up></app-up>
   <app-preventivo></app-preventivo>
 </main>

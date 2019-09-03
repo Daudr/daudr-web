@@ -1,30 +1,45 @@
 <div mat-dialog-content>
   <h3>Richiedi un preventivo gratuito</h3>
   <form (submit)="onSubmitSend()">
-    <mat-form-field class="less-width">
-      <input matInput placeholder="Nome e Cognome" required [(ngModel)]="nominativo" name="nominativo">
-    </mat-form-field>
-    <mat-form-field class="less-width">
-      <input matInput placeholder="E-Mail" required [(ngModel)]="email" name="email">
-    </mat-form-field>
-    <mat-form-field class="less-width">
-      <input matInput placeholder="Telefono" required [(ngModel)]="telefono" name="telefono">
-    </mat-form-field>
-    <mat-form-field class="less-width">
-      <input matInput placeholder="Città" required [(ngModel)]="citta" name="citta">
-    </mat-form-field>
-    <mat-form-field class="less-width">
-      <input matInput placeholder="Azienda" [(ngModel)]="azienda" name="azienda">
-    </mat-form-field>
-    <mat-form-field class="less-width">
-      <input matInput placeholder="Sito web esistente o da registrare" [(ngModel)]="sito" name="sito">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <textarea matInput matTextareaAutosize placeholder="Eventuali note" [(ngModel)]="note" name="note"></textarea>
-    </mat-form-field>
-    <div class="center">
-      <button type="submit" mat-raised-button>INVIA</button>
-      <button type="reset" mat-raised-button>CANCELLA I CAMPI</button>
+    <div class="row">
+      <mat-form-field class="less-width" appearance="outline">
+        <mat-label>Nome e Cognome</mat-label>
+        <input matInput required [(ngModel)]="nominativo" name="nominativo">
+      </mat-form-field>
+      <mat-form-field class="less-width" appereance="outline">
+        <mat-label>E-Mail</mat-label>
+        <input matInput required [(ngModel)]="email" name="email">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="less-width" appearance="outline">
+        <mat-label>Telefono</mat-label>
+        <input matInput required [(ngModel)]="telefono" name="telefono">
+      </mat-form-field>
+      <mat-form-field class="less-width" appearance="outline">
+        <mat-label>Città</mat-label>
+        <input matInput required [(ngModel)]="citta" name="citta">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="less-width" appearance="outline">
+        <mat-label>Azienda</mat-label>
+        <input matInput [(ngModel)]="azienda" name="azienda">
+      </mat-form-field>
+      <mat-form-field class="less-width" appearance="outline">
+        <mat-label>Sito web esistente o da registrare</mat-label>
+        <input matInput [(ngModel)]="sito" name="sito">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Eventuali note</mat-label>
+        <textarea matInput matTextareaAutosize [(ngModel)]="note" name="note"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="center buttons">
+      <button type="reset" mat-raised-button color="warn">CANCELLA</button>
+      <button type="submit" mat-raised-button color="primary">INVIA</button>
     </div>
   </form>
 </div>

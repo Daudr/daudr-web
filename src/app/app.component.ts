@@ -19,6 +19,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.firebase
+      .getIntroduction()
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe((intro: string) => {
+        this.sections[0].description = intro;
+      });
+
+    this.firebase
       .getJobs()
       .pipe(takeUntil(this._destroyed$))
       .subscribe((jobs: Job[]) => {

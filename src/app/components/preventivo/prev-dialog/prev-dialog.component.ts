@@ -9,7 +9,6 @@ import { MatDialogRef } from '@angular/material';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrevDialogComponent  {
-
   nominativo: string;
   email: string;
   telefono: string;
@@ -23,16 +22,6 @@ export class PrevDialogComponent  {
   onSubmitSend () {
 
     if (this.nominativo && this.email && this.telefono && this.citta) {
-      const info = {
-        nome: this.nominativo,
-        email: this.email,
-        telefono: this.telefono,
-        citta: this.citta,
-        azienda: this.azienda,
-        sito: this.sito,
-        note: this.note
-      };
-
       const email = {
         to: 'michele@daudr.me',
         from: this.email,

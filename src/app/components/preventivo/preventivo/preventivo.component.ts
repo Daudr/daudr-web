@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
 import { PrevDialogComponent } from '../prev-dialog/prev-dialog.component';
@@ -6,16 +6,14 @@ import { PrevDialogComponent } from '../prev-dialog/prev-dialog.component';
 @Component({
   selector: 'app-preventivo',
   templateUrl: './preventivo.component.html',
-  styleUrls: ['./preventivo.component.css']
+  styleUrls: ['./preventivo.component.scss']
 })
-export class PreventivoComponent implements OnInit {
+export class PreventivoComponent {
   arrow_direction = 'keyboard_arrow_right';
   arrow_class = 'arrow';
   preventivo_class = 'preventivo';
 
   constructor(private dialog: MatDialog) { }
-
-  ngOnInit() { }
 
   toggleArrow () {
     if (this.arrow_direction === 'keyboard_arrow_right') {

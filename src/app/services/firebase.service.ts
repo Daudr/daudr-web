@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { Job, Site, Contact } from '../interfaces';
 import { map, delay } from 'rxjs/operators';
 
@@ -32,6 +32,15 @@ export class FirebaseService {
     return contactsRef.valueChanges().pipe(
       // delay(10000),
       map(contacts => contacts)
+    );
+  }
+
+  getIntroduction () {
+    const introductionRef = this.db.object('introduction') as AngularFireObject<string>;
+
+    return introductionRef.valueChanges().pipe(
+      // delay(10000),
+      map(intro => intro)
     );
   }
 }

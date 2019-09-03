@@ -1,4 +1,4 @@
-import { Job, Site } from './interfaces';
+import { Job, Site, Contact } from './interfaces';
 
 /**
  * Dati contenuti in una section del sito
@@ -15,11 +15,11 @@ export interface Section {
 
   /** Tipo di sezione */
   // TODO: type must be present
-  type?: 'simple' | 'list' | 'content';
+  type?: 'simple' | 'list' | 'contacts' | 'map';
 
   /** Url delle immagini in una sezione con immagini */
   imagesUrls?: string[];
 
-  /** Lista di oggetti per la sezione relativa al cv e al portfolio */
-  list?: Job[] | Site[];
+  /** Lista di oggetti per la sezione relativa al cv, al portfolio e ai contatti */
+  list?: Job[] | Site[] | Contact[];
 }

@@ -21,6 +21,15 @@
           [first]="i === 0"
           [last]="i === sections.length - 1">
       </daudr-section-list>
+      <daudr-section-contacts
+        *ngSwitchCase="'contacts'"
+        [title]="section.title"
+        [list]="section.list"
+        [lineStyle]="section.lineStyle"
+        [right]="odd"
+        [first]="i === 0"
+        [last]="i === sections.length - 1">
+      </daudr-section-contacts>
     </ng-container>
   </ng-container>
   <!-- app-whoiam></app-whoiam>

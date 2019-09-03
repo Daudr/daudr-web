@@ -3,7 +3,7 @@ import { SECTIONS, dateSort } from './utils';
 import { FirebaseService } from './services/firebase.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Site, Job } from './interfaces';
+import { Site, Job, Contact } from './interfaces';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +30,13 @@ export class AppComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this._destroyed$))
       .subscribe((sites: Site[]) => {
         this.sections[2].list = sites.sort(dateSort);
+      });
+
+    this.firebase
+      .getContacts()
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe((contacts: Contact[]) => {
+        this.sections[3].list = contacts;
       });
   }
 

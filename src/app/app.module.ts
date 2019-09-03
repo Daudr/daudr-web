@@ -25,13 +25,15 @@ import { SectionListComponent } from './components/section-list/section-list.com
 
 import { FirebaseService } from './services/firebase.service';
 import { WINDOW_PROVIDERS } from './services/window.service';
+import { SectionContactsComponent } from './components/section-contacts/section-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UpComponent,
     SectionComponent,
-    SectionListComponent
+    SectionListComponent,
+    SectionContactsComponent
   ],
   imports: [
     BrowserModule.withServerTransition( { appId: 'daudr-web' } ),

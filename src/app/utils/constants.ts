@@ -21,15 +21,13 @@ I servizi che offro variano da cliente a cliente, ma quelli in cui sono più fer
   },
   {
     title: 'Portfolio',
-    description: 'Ciao sono Michele',
     lineStyle: 'right-left',
     type: 'list'
   },
   {
-    title: 'Chi sono 2',
-    description: 'Ciao sono Michele 2',
+    title: 'Contatti',
     lineStyle: 'left-right',
-    type: 'simple'
+    type: 'contacts'
   },
   {
     title: 'Chi sono',

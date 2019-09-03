@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { environment } from '../../../environments/.env.dev';
+
 @Component({
   selector: 'daudr-section-map',
   templateUrl: './section-map.component.html',
@@ -14,4 +16,6 @@ export class SectionMapComponent {
   @Input() last: boolean;
 
   @Input() lineStyle: string;
+
+  mapSrc = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3TVz7H9reUcRC3hebSWJVnY&key=${environment.GOOGLE_MAPS_KEY}`;
 }

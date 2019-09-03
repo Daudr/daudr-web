@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 
-const { environment } = require('./environments/.env.dev');
+import { environment } from './environments/.env.dev';
 
 if (environment.production) {
   enableProdMode();

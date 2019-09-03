@@ -2,7 +2,7 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-const { environment } = require('./environments/.env.dev');
+import { environment } from './environments/.env.dev';
 
 import 'hammerjs';
 

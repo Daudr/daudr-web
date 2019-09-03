@@ -10,7 +10,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
-const { environment } = require('../environments/.env.dev');
+import { environment } from '../environments/.env.dev';
 
 import { AppComponent } from './app.component';
 
@@ -52,4 +52,4 @@ import { WINDOW_PROVIDERS } from './services/window.service';
   providers: [FirebaseService, WINDOW_PROVIDERS],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

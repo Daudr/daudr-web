@@ -14,7 +14,7 @@
           <strong class="object-title">{{ object.nome }}</strong>
           <div class="object-description">
             <pre>{{ object.datore }} - Dal {{ object.periodo.da }} al {{ object.periodo.a ? object.periodo.a : 'Presente' }}</pre>
-            {{ object.descrizione }}
+            <div class="object-description__div" [innerHTML]="object.descrizione"></div>
           </div>
         </li>
       </ul>

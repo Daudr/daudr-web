@@ -43,8 +43,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/.env.dev",
-                  "with": "src/environments/.env.prod"
+                  "replace": "src/environments/.env.dev.ts",
+                  "with": "src/environments/.env.prod.ts"
                 }
               ],
               "serviceWorker": true,
@@ -113,8 +113,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/.env.dev",
-                  "with": "src/environments/.env.prod"
+                  "replace": "src/environments/.env.dev.ts",
+                  "with": "src/environments/.env.prod.ts"
                 }
               ],
               "sourceMap": false,

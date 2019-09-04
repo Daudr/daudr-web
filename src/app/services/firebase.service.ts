@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { Job, Site, Contact } from '../interfaces';
-import { map, delay } from 'rxjs/operators';
+import { map, delay, take } from 'rxjs/operators';
 
 @Injectable()
 export class FirebaseService {
@@ -13,7 +13,8 @@ export class FirebaseService {
 
     return jobsRef.valueChanges().pipe(
       // delay(10000),
-      map(jobs => jobs)
+      map(jobs => jobs),
+      take(1)
     );
   }
 
@@ -22,7 +23,8 @@ export class FirebaseService {
 
     return sitesRef.valueChanges().pipe(
       // delay(10000),
-      map(sites => sites)
+      map(sites => sites),
+      take(1)
     );
   }
 
@@ -31,7 +33,8 @@ export class FirebaseService {
 
     return contactsRef.valueChanges().pipe(
       // delay(10000),
-      map(contacts => contacts)
+      map(contacts => contacts),
+      take(1)
     );
   }
 
@@ -40,7 +43,8 @@ export class FirebaseService {
 
     return introductionRef.valueChanges().pipe(
       // delay(10000),
-      map(intro => intro)
+      map(intro => intro),
+      take(1)
     );
   }
 }

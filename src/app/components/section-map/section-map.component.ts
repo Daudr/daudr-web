@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { environment } from '../../../environments/.env.dev';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'daudr-section-map',
@@ -17,5 +18,9 @@ export class SectionMapComponent {
 
   @Input() lineStyle: string;
 
-  mapSrc = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3TVz7H9reUcRC3hebSWJVnY&key=${environment.GOOGLE_MAPS_KEY}`;
+  constructor (private sanitizer: DomSanitizer) {}
+
+  get mapSrc () {
+   return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ3TVz7H9reUcRC3hebSWJVnY&key=${environment.GOOGLE_MAPS_KEY}`);
+  }
 }

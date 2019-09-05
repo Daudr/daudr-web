@@ -1,4 +1,10 @@
-import { Component, HostListener, ViewChild, Inject } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  ViewChild,
+  Inject,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { WINDOW } from '../../services/window.service';
 import { DOCUMENT } from '@angular/common';
 
@@ -6,6 +12,7 @@ import { DOCUMENT } from '@angular/common';
   selector: 'app-up',
   templateUrl: './up.component.html',
   styleUrls: ['./up.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpComponent {
   isVisible = false;
@@ -13,14 +20,21 @@ export class UpComponent {
 
   @ViewChild('backToTop', { static: false }) backToTop: HTMLElement;
 
-  constructor(@Inject(DOCUMENT) private document: Document, @Inject(WINDOW) private window: Window) { }
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(WINDOW) private window: Window
+  ) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const offset = 300;
     const offsetOpacity = 1200;
 
-    const position = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+    const position =
+      this.window.pageYOffset ||
+      this.document.documentElement.scrollTop ||
+      this.document.body.scrollTop ||
+      0;
 
     if (position > offset) {
       this.isVisible = true;

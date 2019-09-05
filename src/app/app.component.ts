@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'
 import { SECTIONS, dateSort } from './utils'
 import { FirebaseService } from './services/firebase.service'
 import { Subject, forkJoin, of } from 'rxjs'
@@ -8,9 +8,10 @@ import { takeUntil, catchError } from 'rxjs/operators'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, OnDestroy {
-  sections = SECTIONS
+  sections = SECTIONS;
 
   intro$ = this.firebase.getIntroduction();
   jobs$ = this.firebase.getJobs();
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private _destroyed$ = new Subject<boolean>();
 
-  constructor(private firebase: FirebaseService) {}
+  constructor(private firebase: FirebaseService, private changeRef: ChangeDetectorRef) {}
 
   ngOnInit() {
     forkJoin({
@@ -37,6 +38,8 @@ export class AppComponent implements OnInit, OnDestroy {
         this.sections[1].list = jobs.sort(dateSort);
         this.sections[2].list = sites.sort(dateSort);
         this.sections[3].list = contacts;
+
+        this.changeRef.detectChanges();
       });
   }
 

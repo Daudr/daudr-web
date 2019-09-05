@@ -1,12 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Job, Site } from '../../interfaces';
 
 @Component({
   selector: 'daudr-section-list',
   templateUrl: './section-list.component.html',
-  styleUrls: ['./section-list.component.scss']
+  styleUrls: ['./section-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SectionListComponent implements OnInit {
+export class SectionListComponent {
   @Input() list: Job[] | Site[];
   @Input() title: string;
   @Input() lineStyle: 'right-left' | 'left-right';
@@ -14,10 +15,4 @@ export class SectionListComponent implements OnInit {
   @Input() right: boolean;
   @Input() first: boolean;
   @Input() last: boolean;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

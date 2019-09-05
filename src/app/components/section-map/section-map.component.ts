@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { environment } from '../../../environments/.env.dev';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -6,7 +6,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'daudr-section-map',
   templateUrl: './section-map.component.html',
-  styleUrls: ['./section-map.component.scss']
+  styleUrls: ['./section-map.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SectionMapComponent {
   @Input() title: string;

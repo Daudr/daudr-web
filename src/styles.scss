@@ -86,7 +86,7 @@ html {
   }
 }
 
-* {
+body {
   font-family: 'Roboto';
 }
 
@@ -95,7 +95,9 @@ a {
 }
 
 mat-toolbar-row.mat-toolbar-row {
-  font-size: 1em;
+  font-size: .8em;
+  padding: 0;
+  padding-left: 5px;
 }
 
 .center {
@@ -104,34 +106,6 @@ mat-toolbar-row.mat-toolbar-row {
 
 main {
   margin: 0 15% 20px 15%;
-}
-
-.div-cv,
-.div-portfolio,
-.div-contatti,
-.div-musica,
-.div-competenze {
-  margin-top: 20px;
-}
-
-.job-card,
-.site-card {
-  width: 60%;
-  margin: 5px auto;
-}
-
-@media screen and (max-width: 625px) {
-  .job-card,
-  .site-card {
-    width: 75%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .job-card,
-  .site-card {
-    width: auto;
-  }
 }
 
 .mat-card-title {
@@ -155,20 +129,10 @@ main {
   display: inline-block;
 }
 
-.border-bottom {
-  border-bottom: white solid 2px;
-}
-
-.border-top {
-  border-top: white solid 2px;
-}
-
-.border-right {
-  border-right: white solid 2px;
-}
-
-.border-left {
-  border-left: white solid 2px;
+@each $var in 'bottom', 'top', 'right', 'left' {
+  .border-#{$var} {
+    border-#{$var}: white solid 2px;
+  }
 }
 
 #title {
@@ -197,4 +161,17 @@ main {
 
 .section-right + div.bottom-line {
   clear: both;
+}
+
+@media screen and (max-width: 625px) {
+  .daudr-section {
+    width: 100%;
+  }
+
+  .top-line > div,
+  .bottom-line > div {
+    width: 49%;
+    height: 200%;
+    display: inline-block;
+  }
 }

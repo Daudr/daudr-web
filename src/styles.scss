@@ -95,7 +95,7 @@ a {
 }
 
 mat-toolbar-row.mat-toolbar-row {
-  font-size: .8em;
+  font-size: 0.8em;
   padding: 0;
   padding-left: 5px;
 }
@@ -166,12 +166,23 @@ main {
 @media screen and (max-width: 625px) {
   .daudr-section {
     width: 100%;
+    margin-bottom: 50px;
   }
 
-  .top-line > div,
-  .bottom-line > div {
-    width: 49%;
-    height: 200%;
-    display: inline-block;
+  .top-line,
+  .bottom-line {
+    display: none;
+  }
+
+  ul.list {
+    * {
+      white-space: pre-wrap;
+    }
+  }
+
+  mat-toolbar-row {
+    span {
+      white-space: pre-wrap;
+    }
   }
 }

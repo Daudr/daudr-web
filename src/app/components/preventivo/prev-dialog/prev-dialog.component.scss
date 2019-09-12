@@ -19,6 +19,15 @@ form {
   }
 }
 
+@media screen and (max-width: 625px) {
+  .row {
+    .less-width {
+      width: 100%;
+      margin: 0 10px;
+    }
+  }
+}
+
 .buttons {
   margin: 10px;
 

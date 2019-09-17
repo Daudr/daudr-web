@@ -37,6 +37,7 @@ npm-debug.log
 testem.log
 /typings
 yarn-error.log
+/.firebase
 
 # e2e
 /e2e/*.js

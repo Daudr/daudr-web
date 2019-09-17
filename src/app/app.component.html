@@ -1,9 +1,49 @@
-<app-navbar></app-navbar>
-<app-whoiam></app-whoiam>
-<app-portfolio></app-portfolio>
-<app-competenze></app-competenze>
-<app-cv></app-cv>
-<app-contatti></app-contatti>
-<app-up></app-up>
-<app-preventivo></app-preventivo>
-<app-footer></app-footer>
+<nav>
+  <app-navbar></app-navbar>
+</nav>
+
+<main fxLayout="column">
+  <ng-container *ngFor="let section of sections; odd as odd; index as i">
+    <ng-container [ngSwitch]="section.type">
+      <daudr-section
+        *ngSwitchCase="'simple'"
+        [section]="section"
+        [right]="odd"
+        [first]="i === 0"
+        [last]="i === sections.length - 1"
+      ></daudr-section>
+      <daudr-section-list
+          *ngSwitchCase="'list'"
+          [title]="section.title"
+          [list]="section.list"
+          [lineStyle]="section.lineStyle"
+          [right]="odd"
+          [first]="i === 0"
+          [last]="i === sections.length - 1">
+      </daudr-section-list>
+      <daudr-section-contacts
+        *ngSwitchCase="'contacts'"
+        [title]="section.title"
+        [list]="section.list"
+        [lineStyle]="section.lineStyle"
+        [right]="odd"
+        [first]="i === 0"
+        [last]="i === sections.length - 1">
+      </daudr-section-contacts>
+      <daudr-section-map
+        *ngSwitchCase="'map'"
+        [title]="section.title"
+        [lineStyle]="section.lineStyle"
+        [right]="odd"
+        [first]="i === 0"
+        [last]="i === sections.length - 1"
+      ></daudr-section-map>
+    </ng-container>
+  </ng-container>
+  <app-up></app-up>
+  <app-preventivo></app-preventivo>
+</main>
+
+<footer>
+  <app-footer></app-footer>
+</footer>

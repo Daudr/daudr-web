@@ -1,9 +1,0 @@
-<div id="portfolio" class="div-portfolio">
-  <mat-card>
-    <mat-card-title>Progetti web a cui ho contribuito/creato</mat-card-title>
-    <mat-card-content>
-      <mat-spinner *ngIf="sites?.length<=0"></mat-spinner>
-      <app-sites *ngFor="let site of sites" [site]="site" [immagini]="immagini"></app-sites>
-    </mat-card-content>
-  </mat-card>
-</div>

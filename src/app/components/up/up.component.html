@@ -1,1 +1,1 @@
-<a class="cd-top">Top</a>
+<a class="cd-top" [ngClass]="{ 'cd-is-visible': isVisible, 'cd-fade-out': fadeOut }" (click)="scrollTop()" #backToTop>Top</a>

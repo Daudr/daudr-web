@@ -11,25 +11,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
+            "es5BrowserSupport": true,
             "assets": [
               "src/assets",
               "src/favicon.ico",
               "src/robots.txt",
               "src/sitemap.xml",
               "src/BingSiteAuth.xml",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/ads.txt"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -44,8 +44,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/environments/.env.dev.ts",
+                  "with": "src/environments/.env.prod.ts"
                 }
               ],
               "serviceWorker": true,
@@ -77,11 +77,9 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
-            ],
+            "scripts": [],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "assets": [
               "src/assets",
@@ -89,7 +87,8 @@
               "src/robots.txt",
               "src/sitemap.xml",
               "src/BingSiteAuth.xml",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/ads.txt"
             ]
           }
         },
@@ -103,6 +102,29 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/.env.dev.ts",
+                  "with": "src/environments/.env.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
           }
         }
       }
@@ -136,11 +158,11 @@
   "defaultProject": "daudr-web",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "css"
+      "prefix": "daudr",
+      "styleext": "scss"
     },
     "@schematics/angular:directive": {
-      "prefix": "app"
+      "prefix": "daudr"
     }
   }
 }

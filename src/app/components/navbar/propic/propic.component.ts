@@ -1,16 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-propic',
   templateUrl: './propic.component.html',
-  styleUrls: ['./propic.component.css']
+  styleUrls: ['./propic.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PropicComponent implements OnInit {
-  @Input() image;
-  
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class PropicComponent {
+  @Input() image: string;
 }

@@ -1,0 +1,30 @@
+<div class="top-line" *ngIf="!first">
+  <div class="first"></div>
+  <div class="second" [ngClass]="{ 'border-top border-left': lineStyle === 'right-left' }"></div>
+  <div class="third" [ngClass]="{ 'border-top border-right': lineStyle === 'left-right' }"></div>
+  <div class="fourth"></div>
+</div>
+
+<section class="daudr-section" [ngClass]="{ 'section-right': right }">
+  <mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-content>
+      <ul class="list">
+        <li class="object-list" *ngFor="let object of list">
+          <strong class="object-title">{{ object.nome }}</strong>
+          <div class="object-description">
+            <pre>{{ object.datore }} - Dal {{ object.periodo.da }} al {{ object.periodo.a ? object.periodo.a : 'Presente' }}</pre>
+            <div class="object-description__div" [innerHTML]="object.descrizione"></div>
+          </div>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<div class="bottom-line" *ngIf="!last">
+  <div class="first"></div>
+  <div class="second" [ngClass]="{ 'border-bottom border-left': lineStyle === 'right-left' }"></div>
+  <div class="third" [ngClass]="{ 'border-bottom border-right': lineStyle === 'left-right' }"></div>
+  <div class="fourth"></div>
+</div>

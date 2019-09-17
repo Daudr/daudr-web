@@ -1,0 +1,188 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import './assets/styles/doc-theme.scss';
+
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+html {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.center-align {
+  text-align: center;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+body {
+  font-family: 'Roboto';
+}
+
+a {
+  text-decoration: none;
+}
+
+mat-toolbar-row.mat-toolbar-row {
+  font-size: 0.8em;
+  padding: 0;
+  padding-left: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+main {
+  margin: 0 15% 20px 15%;
+}
+
+.mat-card-title {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.top-line,
+.bottom-line {
+  height: 50px;
+}
+
+.top-line > div,
+.bottom-line > div {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+}
+
+@each $var in 'bottom', 'top', 'right', 'left' {
+  .border-#{$var} {
+    border-#{$var}: white solid 2px;
+  }
+}
+
+#title {
+  color: #fff;
+  text-align: center;
+  font-family: 'lato', sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  letter-spacing: 10px;
+  padding-left: 10px;
+
+  span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.daudr-section {
+  width: 50%;
+}
+
+.section-right {
+  float: right;
+}
+
+.section-right + div.bottom-line {
+  clear: both;
+}
+
+@media screen and (max-width: 625px) {
+  .daudr-section {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .top-line,
+  .bottom-line {
+    display: none;
+  }
+
+  ul.list {
+    * {
+      white-space: pre-wrap;
+    }
+  }
+
+  mat-toolbar-row {
+    span {
+      white-space: pre-wrap;
+    }
+  }
+}

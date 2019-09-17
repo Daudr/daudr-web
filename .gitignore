@@ -9,6 +9,7 @@ dist-server/
 # dependencies
 /node_modules
 /functions/node_modules
+/functions/dist
 
 # IDEs and editors
 /.idea

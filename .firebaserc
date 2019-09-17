@@ -6,7 +6,10 @@
     "daudr-web": {
       "hosting": {
         "test": [
-          "test-daudr"
+          "daudr-test-space"
+        ],
+        "prod": [
+          "daudr-web"
         ]
       }
     }

@@ -1,0 +1,29 @@
+<div class="top-line" *ngIf="!first">
+  <div class="first"></div>
+  <div class="second" [ngClass]="{ 'border-top border-left': lineStyle === 'right-left' }"></div>
+  <div class="third" [ngClass]="{ 'border-top border-right': lineStyle === 'left-right' }"></div>
+  <div class="fourth"></div>
+</div>
+
+<section class="daudr-section" [ngClass]="{ 'section-right': right }">
+  <mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="space-between" class="contact__div">
+        <a *ngFor="let contact of list" [href]="contact.link" target="_blank" rel="noopener noreferrer" class="icon">
+          <div fxFlex="25" fxFlexFill>
+            <img *ngIf="contact.icon" data-src={{contact.icon}} [alt]="contact.alt" class="icon lazyload">
+            <!-- <p *ngIf="contact.altro" class="altro">({{contact.altro}})</p> -->
+          </div>
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<div class="bottom-line" *ngIf="!last">
+  <div class="first"></div>
+  <div class="second" [ngClass]="{ 'border-bottom border-left': lineStyle === 'right-left' }"></div>
+  <div class="third" [ngClass]="{ 'border-bottom border-right': lineStyle === 'left-right' }"></div>
+  <div class="fourth"></div>
+</div>

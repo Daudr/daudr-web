@@ -13,7 +13,7 @@
         <li class="object-list" *ngFor="let object of list">
           <strong class="object-title">{{ object.nome }}</strong>
           <div class="object-description">
-            <pre>{{ object.datore }} - Dal {{ object.periodo.da }} al {{ object.periodo.a ? object.periodo.a : 'Presente' }}</pre>
+            <pre>{{ object.datore }}<br/>Dal {{ object.periodo.da }} al {{ object.periodo.a ? object.periodo.a : 'Presente' }}</pre>
             <div class="object-description__div" [innerHTML]="object.descrizione"></div>
           </div>
         </li>
